@@ -58,6 +58,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  verification: {
+    google: "5wsCRISkxWibNS8a64C8AFGBgpaqizRY3wG7VZuy79g",
+  },
 };
 
 // --- JSON-LD Structured Data ---
