@@ -68,14 +68,14 @@ export default function HowItWorks() {
             ))}
           </div>
 
-          {/* Process graphic */}
+          {/* Supporting image */}
           <div className="relative" data-animate>
             <Image
-              src="/images/process.jpg"
-              alt="Infografia: 5 pasos para tu corrido personalizado"
-              width={500}
-              height={900}
-              className="w-full max-w-sm mx-auto rounded-2xl"
+              src="/images/phone-closeup.jpg"
+              alt="Mano sosteniendo telefono escuchando un corrido"
+              width={700}
+              height={450}
+              className="w-full rounded-2xl object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>

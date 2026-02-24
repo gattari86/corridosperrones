@@ -31,38 +31,30 @@ export default function Testimonials() {
         </p>
 
         <div
-          className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-4"
           data-animate
         >
           {testimonials.map((t, i) => (
-            <button
-              key={i}
-              onClick={() => setLightboxSrc(t.src)}
-              className="group relative rounded-xl overflow-hidden border border-border hover:border-gold/40 transition-colors cursor-pointer"
-              aria-label={`Ver testimonio ${i + 1}`}
-            >
-              <Image
-                src={t.src}
-                alt={`Conversacion de WhatsApp con cliente satisfecho - testimonio ${i + 1}`}
-                width={400}
-                height={500}
-                className="w-full h-auto"
-                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
-            </button>
-          ))}
-        </div>
-
-        {/* Context captions */}
-        <div
-          className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-2"
-          data-animate
-        >
-          {testimonials.map((t, i) => (
-            <p key={i} className="text-muted text-xs sm:text-sm text-center leading-snug">
-              {t.context}
-            </p>
+            <div key={i} className="flex flex-col items-center gap-2">
+              <button
+                onClick={() => setLightboxSrc(t.src)}
+                className="group relative rounded-xl overflow-hidden border border-border hover:border-gold/40 transition-colors cursor-pointer w-full max-w-xs sm:max-w-none"
+                aria-label={`Ver testimonio ${i + 1}`}
+              >
+                <Image
+                  src={t.src}
+                  alt={`Conversacion de WhatsApp con cliente satisfecho - testimonio ${i + 1}`}
+                  width={400}
+                  height={500}
+                  className="w-full h-auto"
+                  sizes="(max-width: 640px) 80vw, (max-width: 1024px) 45vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+              </button>
+              <p className="text-muted text-xs sm:text-sm text-center leading-snug max-w-xs">
+                {t.context}
+              </p>
+            </div>
           ))}
         </div>
       </div>
