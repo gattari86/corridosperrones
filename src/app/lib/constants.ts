@@ -26,7 +26,7 @@ export const AUDIO_SAMPLES = [
   },
   {
     id: "la-taqueria",
-    title: "La Taqueria",
+    title: "Mi Taqueria",
     description:
       "Un corrido para un negocio familiar. Orgullo, esfuerzo y sabor del bueno.",
     src: "/audio/la-taqueria.mp3",
