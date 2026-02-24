@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback, useEffect } from "react";
+import { trackEvent } from "../lib/ga";
 
 interface AudioPlayerProps {
   src: string;
@@ -23,6 +24,7 @@ export default function AudioPlayer({
   tag,
 }: AudioPlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
+  const hasTrackedPlay = useRef(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -38,6 +40,10 @@ export default function AudioPlayer({
       setIsLoading(true);
       try {
         await audio.play();
+        if (!hasTrackedPlay.current) {
+          hasTrackedPlay.current = true;
+          trackEvent("audio_play", { track_name: title });
+        }
       } catch {
         // Playback blocked or failed
       }

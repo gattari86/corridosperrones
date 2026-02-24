@@ -92,6 +92,28 @@ is referenced in the section heading and the FAQ answers in constants.ts.
 | `mi-reina-mi-vida.mp3` | Gift-for-wife corrido sample |
 | `la-taqueria.mp3` | Business pride corrido sample |
 
+## Analytics (GA4)
+
+Google Analytics 4 is wired up and ready. It tracks three custom events:
+
+| Event | Trigger | Parameters |
+|-------|---------|------------|
+| `whatsapp_click` | Any WhatsApp CTA click | `cta_location` (hero, como-funciona, ejemplos, que-incluye, final, sticky) |
+| `audio_play` | First play per track per page load | `track_name` |
+| `scroll_50` | User scrolls past 50% of the page | (none) |
+
+### Setup
+
+1. Create a GA4 property at [analytics.google.com](https://analytics.google.com) and grab the Measurement ID (starts with `G-`).
+2. Set the environment variable in Vercel:
+   - Go to your project Settings > Environment Variables.
+   - Add `NEXT_PUBLIC_GA4_MEASUREMENT_ID` with your Measurement ID.
+   - Redeploy for it to take effect.
+3. Verify in GA4 Realtime report by visiting the site and clicking a CTA.
+4. In GA4, go to Admin > Events and mark `whatsapp_click` as a Key Event (conversion).
+
+For local development, the variable is read from `.env.local`. Copy `.env.example` and fill in your ID.
+
 ## Tech Stack
 
 - Next.js 16 (App Router)
@@ -109,6 +131,7 @@ src/app/
   globals.css         # Theme colors, animations, audio styles
   lib/
     constants.ts      # WhatsApp URL, audio samples, FAQ, config
+    ga.ts             # GA4 trackEvent utility
   components/
     Hero.tsx           # Hero section with CTA
     HowItWorks.tsx     # 5-step process
@@ -121,6 +144,7 @@ src/app/
     FinalCTA.tsx       # Closing CTA section
     Footer.tsx         # Simple footer
     StickyWhatsApp.tsx # Fixed bottom CTA bar (client)
+    GoogleAnalytics.tsx # GA4 gtag loader + event tracking (client)
     ScrollAnimator.tsx # Scroll-triggered animations (client)
     SectionImage.tsx   # Full-width section break images
 ```

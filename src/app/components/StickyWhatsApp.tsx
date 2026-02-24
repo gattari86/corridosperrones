@@ -25,6 +25,7 @@ export default function StickyWhatsApp() {
         href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
+        data-cta="sticky"
         className="flex items-center justify-center gap-2.5 w-full max-w-md mx-auto bg-gold hover:bg-gold-light active:bg-gold-dark text-bg font-heading font-bold py-4 rounded-xl text-lg transition-colors"
       >
         {/* WhatsApp icon */}

@@ -51,6 +51,7 @@ export default function AudioSamples() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
+            data-cta="ejemplos"
             className="inline-flex items-center justify-center gap-2.5 bg-gold hover:bg-gold-light active:bg-gold-dark text-bg font-heading font-bold text-base sm:text-lg py-3.5 px-8 rounded-xl transition-colors w-full sm:w-auto"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
