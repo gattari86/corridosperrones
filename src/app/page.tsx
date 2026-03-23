@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+import PaidBanner from "./components/PaidBanner";
 import Hero from "./components/Hero";
 import HowItWorks from "./components/HowItWorks";
 import AudioSamples from "./components/AudioSamples";
@@ -14,6 +16,9 @@ import SectionImage from "./components/SectionImage";
 export default function Home() {
   return (
     <>
+      <Suspense fallback={null}>
+        <PaidBanner />
+      </Suspense>
       <ScrollAnimator />
       <main>
         <Hero />
