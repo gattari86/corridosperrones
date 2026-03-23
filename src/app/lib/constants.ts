@@ -5,7 +5,7 @@
 // All CTAs on the site use this single link.
 
 export const WHATSAPP_URL =
-  "https://wa.me/13466950345?text=Hola%20quiero%20mi%20corrido%20personalizado";
+  "https://wa.me/13466564486?text=Hola%20quiero%20mi%20corrido%20personalizado";
 
 export const AUDIO_SAMPLES = [
   {
