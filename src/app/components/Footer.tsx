@@ -10,6 +10,10 @@ export default function Footer() {
         <p className="text-muted/60 text-xs">
           {year} Corridos Personalizados. Todos los derechos reservados.
         </p>
+        <p className="text-muted/60 text-xs">
+          Sitio web por{" "}
+          <a href="https://www.poppymarketingandconsulting.com" target="_blank" rel="noopener" className="underline-offset-2 hover:underline">Poppy Marketing</a>
+        </p>
       </div>
     </footer>
   );
